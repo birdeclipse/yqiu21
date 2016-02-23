@@ -1,0 +1,23 @@
+please Use command "make run";(automatically calls gtkwave)
+
+Random test, the value of rs_1 and rs_2 are randomly generated;
+Tested all ALU and BRANCH and PC-related instruction;
+
+
+
+core_alu.v has a lot of unsed wires named instr_is_xxxx, 
+this may not look nicely, but will be trimmed during synthesis and implementation,
+I still keep them in the module only for debug purpose, since you can use GTK wave to see all the which instruction is being excuted.
+
+In the core I try to use as few "comparator" as possible , I only use one comparetor for both signed and unsigned compare,
+the only difference between signed and unsigned compare is to consider the MSB.
+
+
+
+You can modifify the parameter in the core_alu_tb.cpp
+
+#define NUM_CYCLE ((vluint64_t)2048)
+
+#define HALF_PER_PS ((vluint64_t)5000)
+
+#define NUM_RESET_CYCLE ((vluint64_t)10)
