@@ -1,4 +1,0 @@
-riscv64-unknown-elf-gcc -O1 -c test.c
-riscv64-unknown-elf-objdump -S test.o
-
-The output should be 12810;
